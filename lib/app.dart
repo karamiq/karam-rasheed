@@ -75,7 +75,7 @@ class _AppState extends ConsumerState<App> {
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       // Theme
-      themeMode: settings.themeMode,
+      themeMode: ThemeMode.light,
       darkTheme: theme.buildDarkTheme(),
       theme: theme.buildLightTheme(),
       builder: (context, child) => ResponsiveBreakpoints.builder(

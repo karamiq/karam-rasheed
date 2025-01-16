@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_picker_platform_interface/image_picker_platform_interface.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 class XFileMultipartConvertor implements JsonConverter<XFile, MultipartFile> {

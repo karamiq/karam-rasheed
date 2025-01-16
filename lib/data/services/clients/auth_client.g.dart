@@ -56,37 +56,31 @@ class _AuthClient implements AuthClient {
   }
 
   @override
-  Future<HttpResponse<PaginatedResponse<GovModel>>> getGovs(
-      int? pageNumber) async {
+  Future<HttpResponse<ProfileModel>> getInfo() async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'pageNumber': pageNumber};
-    queryParameters.removeWhere((k, v) => v == null);
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options =
-        _setStreamType<HttpResponse<PaginatedResponse<GovModel>>>(Options(
+    final _options = _setStreamType<HttpResponse<ProfileModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '//mobile/governorates',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            )));
+        .compose(
+          _dio.options,
+          '/info/userInfo.json',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late PaginatedResponse<GovModel> _value;
+    late ProfileModel _value;
     try {
-      _value = PaginatedResponse<GovModel>.fromJson(
-        _result.data!,
-        (json) => GovModel.fromJson(json as Map<String, dynamic>),
-      );
+      _value = ProfileModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

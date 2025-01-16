@@ -22,21 +22,20 @@ class BorderSize {
   static const double extraLarge = 48.0;
   static const double full = 100.0;
 
-  static const BorderRadius noneRadius =
-      BorderRadius.all(Radius.circular(none));
+  static const BorderRadius noneRadius = BorderRadius.all(Radius.circular(none));
   static const BorderRadius xxsRadius = BorderRadius.all(Radius.circular(xxs));
   static const BorderRadius extraSmallRadius =
       BorderRadius.all(Radius.circular(extraSmall));
-  static const BorderRadius smallRadius =
-      BorderRadius.all(Radius.circular(small));
-  static const BorderRadius mediumRadius =
-      BorderRadius.all(Radius.circular(medium));
-  static const BorderRadius largeRadius =
-      BorderRadius.all(Radius.circular(large));
+  static const BorderRadius smallRadius = BorderRadius.all(Radius.circular(small));
+  static const BorderRadius mediumRadius = BorderRadius.all(Radius.circular(medium));
+  static const BorderRadius largeRadius = BorderRadius.all(Radius.circular(large));
   static const BorderRadius extraLargeRadius =
       BorderRadius.all(Radius.circular(extraLarge));
-  static const BorderRadius fullRadius =
-      BorderRadius.all(Radius.circular(full));
+  static const BorderRadius fullRadius = BorderRadius.all(Radius.circular(full));
+}
+
+class AppColors {
+  static Color primary = Colors.blue;
 }
 
 class Insets {

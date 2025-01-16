@@ -1,5 +1,5 @@
 import 'package:app/data/models/authentication_model.dart';
-import 'package:app/data/models/gov_model.dart';
+import 'package:app/data/models/profile_model.dart';
 import 'package:app/data/services/clients/callback.dart';
 import 'package:riverpod/riverpod.dart';
 
@@ -17,8 +17,6 @@ abstract class AuthClient {
   @POST('/login')
   FutureApiResponse<AuthenticationModel> login(@Body() dynamic data);
 
-  @GET('//mobile/governorates')
-  FuturePaginatedResponse<GovModel> getGovs(
-    @Query("pageNumber") int? pageNumber,
-  );
+  @GET('/info/userInfo.json')
+  FutureApiResponse<ProfileModel> getInfo();
 }
